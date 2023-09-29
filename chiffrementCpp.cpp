@@ -8,18 +8,22 @@
 
 #include <iostream>
 #include <string>
-
-    std::string nomCheminPublic, nomCheminPrive;
-    int taille;
+using namespace std;
 
 int main()
 {
     using namespace CryptoPP;
-
+    string a = "";
 
     RsaGestion NewKey;
 
     NewKey.generationClef("ClePublic.pem", "ClePrive.pem", 1024);
+
+    a = NewKey.chiffrementRsa("Banane");
+    cout << a << endl;
+
+    cout <<NewKey.dechiffrementRsa(a)<<endl;
+
  
 
     return 0;
