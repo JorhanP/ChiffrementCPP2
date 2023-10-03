@@ -6,6 +6,7 @@
 #include "hex.h"
 #include "RsaGestion.h"
 #include "HashGestion.h"
+#include "AesGestion.h"
 
 #include <iostream>
 #include <string>
@@ -13,11 +14,11 @@ using namespace std;
 
 int main()
 {
-    using namespace CryptoPP;
-    string a = "";
+
+    //string a = "";
 
 
-    cout << "//--------------------------------------Programme 1 RSA---------------------------------------------------//" << endl;
+   /* cout << "//--------------------------------------Programme 1 RSA---------------------------------------------------//" << endl;
 
     RsaGestion NewKey;
 
@@ -46,7 +47,22 @@ int main()
 
     HashGestion NewKey2;
 
-    cout << NewKey2.CalculateFileSHA256("Fichier3.txt") << endl;
+    cout << NewKey2.CalculateFileSHA256("Fichier3.txt") << endl << endl;
+
+    cout << "//--------------------------------------Mini event---------------------------------------------------//" << endl;
+
+    */
+    AesGestion NewKey3;
+    RsaGestion NewKey;
+    //cout << "Test " << endl;
+
+    NewKey.chargementClefs("ClePublic.pem","ClePrive.pem" );
+ 
+    NewKey.dechiffrementFichier("clefasePA.txt", "testDechiffrement.key", false);
+
+    NewKey3.LoadAESKeyFromFile("testDechiffrement.key");
+
+    NewKey3.DecryptFileAES256("histoire.txt", "PA.txt");
 
 
 
