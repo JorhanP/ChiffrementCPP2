@@ -33,10 +33,11 @@ int main()
     NewKey.chiffreDansFichier("Banane2", "FichierABanane.txt");
     cout << NewKey.dechiffreFichier("FichierABanane.txt") << endl;
 
+    cout << "//--------------------------------------Programme 5---------------------------------------------------//" << endl;
 
-
-
-
+    NewKey.chargementClefs("ClePublic.pem", "ClePrive.pem");
+    NewKey.chiffrementFichier("Fichier1.txt", "Fichier2.txt");
+    NewKey.dechiffrementFichier("Fichier2.txt", "Fichier1-1.txt");
 
 
     return 0;
