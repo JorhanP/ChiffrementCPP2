@@ -16,9 +16,10 @@ int main()
     using namespace CryptoPP;
     string a = "";
 
-    RsaGestion NewKey;
 
     cout << "//--------------------------------------Programme 1 RSA---------------------------------------------------//" << endl;
+
+    RsaGestion NewKey;
 
     NewKey.generationClef("ClePublic.pem", "ClePrive.pem", 1024);
 
@@ -41,9 +42,11 @@ int main()
     NewKey.chiffrementFichier("Fichier1.txt", "Fichier2.txt");
     NewKey.dechiffrementFichier("Fichier2.txt", "Fichier1-1.txt");
 
+    cout << "//--------------------------------------Programme SHA256---------------------------------------------------//" << endl;
 
+    HashGestion NewKey2;
 
-
+    cout << NewKey2.CalculateFileSHA256("Fichier3.txt") << endl;
 
 
 
